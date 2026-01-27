@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
               ), child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Начать ', style: GoogleFonts.sourceCodePro(
+                  Text('Начать ', style: GoogleFonts.sourceSans3(
                     color: Color(0xFF8A19D6), fontSize: 18, fontWeight: FontWeight.bold
                   ),),
                   Icon(Icons.navigate_next, color: Color(0xFF8A19D6), size: 25)
