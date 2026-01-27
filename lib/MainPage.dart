@@ -59,69 +59,66 @@ class _MainPageState extends State<MainPage> {
                   ],
                 ),
                 if (isTrue)
-                  Padding(
-                    padding: EdgeInsets.only(top: 10, right: 300),
-                    child: Container(
-                      height: 110,
-                      width: MediaQuery.sizeOf(context).width * 0.3,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(10)
-                      ),
-                      child: Column(
-                        children: [
-                          SizedBox(height: 10),
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.3,
-                            height: 40,
-                            child: ElevatedButton(
-                                onPressed: () {
-                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfileEditScreen()));
-                                },
-                                style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10)
-                                    ),
-                                    backgroundColor: Colors.white
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.edit, color: Colors.black),
-                                    Text(' Изменить', style: GoogleFonts.sourceSans3(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600
-                                    ))
-                                  ],
-                                )
-                            ),
+                  Container(
+                    height: 110,
+                    width: 150  ,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)
+                    ),
+                    child: Column(
+                      children: [
+                        SizedBox(height: 10),
+                        Container(
+                          width: 150,
+                          height: 40,
+                          child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfileEditScreen()));
+                              },
+                              style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10)
+                                  ),
+                                  backgroundColor: Colors.white
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.edit, color: Colors.black),
+                                  Text(' Изменить', style: GoogleFonts.sourceSans3(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600
+                                  ))
+                                ],
+                              )
                           ),
-                          SizedBox(height: 10),
-                          Container(
-                            width: MediaQuery.sizeOf(context).width * 0.3,
-                            height: 40,
-                            child: ElevatedButton(
-                                onPressed: () {},
-                                style: ElevatedButton.styleFrom(
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10)
-                                    ),
-                                    backgroundColor: Color(0xFFB66DFF)
-                                ),
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.exit_to_app, color: Colors.black),
-                                    Text('  Выйти', style: GoogleFonts.sourceSans3(
-                                        color: Colors.black,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600
-                                    ))
-                                  ],
-                                )
-                            ),
+                        ),
+                        SizedBox(height: 10),
+                        Container(
+                          width: 150,
+                          height: 40,
+                          child: ElevatedButton(
+                              onPressed: () {},
+                              style: ElevatedButton.styleFrom(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10)
+                                  ),
+                                  backgroundColor: Color(0xFFB66DFF)
+                              ),
+                              child: Row(
+                                children: [
+                                  Icon(Icons.exit_to_app, color: Colors.black),
+                                  Text('  Выйти', style: GoogleFonts.sourceSans3(
+                                      color: Colors.black,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.w600
+                                  ))
+                                ],
+                              )
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 SizedBox(height: 20),
@@ -228,8 +225,8 @@ class _MainPageState extends State<MainPage> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                      height: 120,
-                      width: 120,
+                      height: 110,
+                      width: 110,
                       decoration: BoxDecoration(
                           color: Color(0xFF8A19D6),
                           borderRadius: BorderRadius.circular(15)
@@ -253,8 +250,8 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ),
                     Container(
-                      height: 120,
-                      width: 120,
+                      height: 110,
+                      width: 110,
                       decoration: BoxDecoration(
                           color: Color(0xFF8A19D6),
                           borderRadius: BorderRadius.circular(15)
@@ -278,8 +275,8 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ),
                     Container(
-                      height: 120,
-                      width: 120,
+                      height: 110,
+                      width: 110,
                       decoration: BoxDecoration(
                           color: Color(0xFF8A19D6),
                           borderRadius: BorderRadius.circular(15)
