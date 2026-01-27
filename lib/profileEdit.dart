@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:suky_project/MainPage.dart';
 
 class ProfileEditScreen extends StatefulWidget {
   const ProfileEditScreen({super.key});
@@ -214,7 +215,8 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
           Padding(
             padding: .symmetric(horizontal: 30, vertical: 50),
             child: IconButton.filled(
-              onPressed: () {print('!dldoW olleH');},
+              onPressed: () {
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainPage()));},
               icon: Icon(Icons.arrow_back_ios_new_rounded),
               style: IconButton.styleFrom(
                 foregroundColor: Color(0xffFFFFFF),
@@ -371,7 +373,7 @@ void showSuccessDialog(BuildContext context) {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () => Navigator.pop(context),
+                  onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainPage())),
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xff8A19D6),
                     shape: RoundedRectangleBorder(

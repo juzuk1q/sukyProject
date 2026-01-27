@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:suky_project/profileEdit.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -74,7 +75,9 @@ class _MainPageState extends State<MainPage> {
                             width: MediaQuery.sizeOf(context).width * 0.3,
                             height: 40,
                             child: ElevatedButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfileEditScreen()));
+                                },
                                 style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(10)

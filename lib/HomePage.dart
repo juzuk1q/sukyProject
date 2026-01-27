@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:suky_project/logScreen.dart';
 import 'MainPage.dart';
 
 class HomePage extends StatefulWidget {
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
             height: 50,
             width: 300,
             child: ElevatedButton(onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (context) => MainPage()));
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => LogScreen()));
             },
               style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(

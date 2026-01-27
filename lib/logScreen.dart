@@ -1,6 +1,8 @@
 import "package:flutter/widgets.dart";
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
+import "package:suky_project/HomePage.dart";
+import "package:suky_project/MainPage.dart";
 
 class LogScreen extends StatefulWidget {
   const LogScreen({super.key});
@@ -110,7 +112,7 @@ class _LogScreenState extends State<LogScreen> {
                       children: [
                         Expanded(
                           child: ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainPage()));},
                             child: Text(
                               "Войти",
                               style: GoogleFonts.inter(
