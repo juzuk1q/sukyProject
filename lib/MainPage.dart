@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:suky_project/profileEdit.dart';
+import 'package:suky_project/inProgress.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -11,7 +12,6 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
-  bool isTrue = false;
 
   @override
   Widget build(BuildContext context) {
@@ -25,17 +25,77 @@ class _MainPageState extends State<MainPage> {
               children: [
                 Row(
                   children: [
-                    Container(
-                        height: 48,
-                        width: 48,
-                        child: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                isTrue = !isTrue;
-                              });
-                            },
-                            child: Image.asset('assets/images/iconl.png')
-                        )
+                    PopupMenuButton<String>(
+                      offset: Offset(0, 55),
+                      color: Color(0xffFFFFFF),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: .circular(15)
+                      ),
+                      elevation: 4,
+                      child: Image.asset('assets/images/iconl.png'),
+                      onSelected: (value) {
+                        if (value == 'edit') {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ProfileEditScreen(),
+                            ),
+                          );
+                        }
+                      },
+                      itemBuilder: (BuildContext context) =>
+                      <PopupMenuEntry<String>>[
+                        PopupMenuItem<String>(
+                          value: 'edit',
+                          height: 40,
+                          padding: .all(0),
+                          child: Container(
+                            padding: .symmetric(horizontal: 15),
+                            child: Row(
+                              children: [
+                                Icon(Icons.edit, color: Colors.black),
+                                SizedBox(width: 10),
+                                Text(
+                                  'Изменить',
+                                  style: GoogleFonts.sourceSans3(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),),
+                        ),
+                        PopupMenuItem(
+                          value: 'exit',
+                          height: 50,
+                          padding: .zero,
+                          child: Container(
+                            margin: .symmetric(horizontal: 10, vertical: 5),
+                            padding: .symmetric(horizontal: 5, vertical: 8),
+                            decoration: BoxDecoration(
+                              borderRadius: .circular(10),
+                              color: Color(0x15B66DFF),
+                            ),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.exit_to_app,
+                                  color: Colors.black,
+                                ),
+                                SizedBox(width: 10),
+                                Text(
+                                  'Выйти',
+                                  style: GoogleFonts.sourceSans3(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),),
+                      ],
                     ),
                     Padding(
                       padding: EdgeInsets.only(left: 20),
@@ -58,69 +118,6 @@ class _MainPageState extends State<MainPage> {
                     Icon(Icons.notifications_none),
                   ],
                 ),
-                if (isTrue)
-                  Container(
-                    height: 110,
-                    width: 150  ,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(height: 10),
-                        Container(
-                          width: 150,
-                          height: 40,
-                          child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfileEditScreen()));
-                              },
-                              style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  backgroundColor: Colors.white
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.edit, color: Colors.black),
-                                  Text(' Изменить', style: GoogleFonts.sourceSans3(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600
-                                  ))
-                                ],
-                              )
-                          ),
-                        ),
-                        SizedBox(height: 10),
-                        Container(
-                          width: 150,
-                          height: 40,
-                          child: ElevatedButton(
-                              onPressed: () {},
-                              style: ElevatedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  backgroundColor: Color(0xFFB66DFF)
-                              ),
-                              child: Row(
-                                children: [
-                                  Icon(Icons.exit_to_app, color: Colors.black),
-                                  Text('  Выйти', style: GoogleFonts.sourceSans3(
-                                      color: Colors.black,
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w600
-                                  ))
-                                ],
-                              )
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
                 SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -414,7 +411,7 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
       )
-          : Container(),
+          : inProgressScreen(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.white,
         selectedItemColor: Color(0xFF8A19D6),
